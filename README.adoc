@@ -11,6 +11,10 @@ Thngs are identified by a globally unique 24 character number. The number is not
 
 The identifiers tend to have +U+ as a prefix.
 
+## Timestamps
+
+Moments in time are stored as https://en.wikipedia.org/wiki/Unix_time[Unix time] with millisecond precision and without timezone.
+
 # License
 
 Copyright © 2017 Devstopfix
