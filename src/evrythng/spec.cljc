@@ -1,6 +1,7 @@
 (ns evrythng.spec "Spec for EVRYTHNG.com REST API"
   (:require [clojure.spec :as spec]
-            [evrythng :as evrythng]))
+            [evrythng :as evrythng]
+            [clojure.spec :as spec]))
 
 ; Identifiers use 24x48 characters. ~10^40 combinations
 
@@ -11,8 +12,8 @@
 
 ; Collections
 
-(spec/def ::evrythng/collection  ::evt/ref-type)
-(spec/def ::evrythng/collections (spec/coll-of ::evt/ref-type))
+(spec/def ::evrythng/collection  ::evrythng/ref-type)
+(spec/def ::evrythng/collections (spec/coll-of ::evrythng/ref-type))
 
 
 ; Properties:
@@ -46,13 +47,13 @@
   "Specification of an Action"
   (spec/def ::evrythng/action
     (spec/keys :req [::evrythng/id]
-            :opt [::evrythng/collection
+               :opt [::evrythng/collection
                   ::evrythng/createdAt
                   ::evrythng/customFields
                   ::evrythng/product
                   ::evrythng/tags
                   ::evrythng/updatedAt]
-            )))
+               )))
 
 ; Thngs
 
@@ -62,7 +63,7 @@
     (spec/keys :req [::evrythng/id
                      ::evrythng/description
                      ::evrythng/name]
-            :opt [::evrythng/collections
+               :opt [::evrythng/collections
                   ::evrythng/createdAt
                   ::evrythng/customFields
                   ::evrythng/identifiers
@@ -72,3 +73,20 @@
                   ::evrythng/timestamp
                   ::evrythng/updatedAt
                   ::evrythng/user])))
+
+; Projects
+
+(def shortDomain-regex #"^[a-z]{1,63}(\.[a-z]+){1,126}$")
+
+(spec/def ::evrythng/shortDomain  (spec/and string? (partial re-matches shortDomain-regex)))
+(spec/def ::evrythng/shortDomains (spec/coll-of ::evrythng/shortDomain))
+
+(def project-spec
+  "Specification of a Project"
+  (spec/def ::evrythng/project
+    (spec/keys
+      :req [::evrythng/name]
+      :opt [::evrythng/id
+            ::evrythng/createdAt
+            ::evrythng/shortDomains
+            ::evrythng/updatedAt])))

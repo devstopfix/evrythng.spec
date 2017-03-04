@@ -24,6 +24,13 @@
       (is (s/valid? ::evrythng/action action)
           (s/explain-str ::evrythng/action action)))))
 
+(deftest projects
+  (testing "Project Doc"
+    (let [project (fixture "project")]
+      (s/explain ::evrythng/project project)
+      (is (s/valid? ::evrythng/project project)
+          (s/explain-str ::evrythng/project project)))))
+
 (deftest thngs
   (testing "Thng Doc"
     (let [thng (fixture "thng")]
