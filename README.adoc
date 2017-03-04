@@ -3,6 +3,8 @@ evrythng.spec
 
 Unofficial https://clojure.org/about/spec[specification] of the https://evrythng.com/[EVRYTHNG.com] REST https://developers.evrythng.com/docs/api-overview[API].
 
+image:https://travis-ci.org/devstopfix/evrythng.spec.svg?branch=master["Build Status", link="https://travis-ci.org/devstopfix/evrythng.spec"]
+
 # Specifications
 
 ## Identifiers
