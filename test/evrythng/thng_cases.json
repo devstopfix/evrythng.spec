@@ -1,0 +1,36 @@
+{
+  "id": "Uknx4Snp6msYhqaRwXcbxpgh",
+  "createdAt": 1486987691399,
+  "customFields": {
+    "PascalCase": "PascalCase",
+    "UPPERCASE": "UPPERCASE",
+    "_snake_tongue": "_snake_tongue",
+    "camelCase": "camelCase",
+    "hyphen-case": "hyphen-case",
+    "lowercase": "lowercase",
+    "snake_case": "snake_case",
+    "snake_tail_": "snake_tail_"
+  },
+  "updatedAt": 1486987691399,
+  "name": "Cases",
+  "properties": {
+    "_snake_tongue": "_snake_tongue",
+    "camelcase": "camelCase",
+    "hyphen-case": "hyphen-case",
+    "lowercase": "lowercase",
+    "pascalcase": "PascalCase",
+    "snake_case": "snake_case",
+    "snake_tail_": "snake_tail_",
+    "uppercase": "UPPERCASE"
+  },
+  "identifiers": {
+    "PascalCase": "PascalCase",
+    "UPPERCASE": "UPPERCASE",
+    "_snake_tongue": "_snake_tongue",
+    "camelCase": "camelCase",
+    "hyphen-case": "hyphen-case",
+    "lowercase": "lowercase",
+    "snake_case": "snake_case",
+    "snake_tail_": "snake_tail_"
+  }
+}

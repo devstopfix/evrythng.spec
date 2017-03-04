@@ -1,0 +1,21 @@
+{
+  "id": "Uk36pARF63PEh6aRahsTGswq",
+  "createdAt": 1346856615704,
+  "updatedAt": 1346856615704,
+  "name": "Truck # L4-4",
+  "description": "Truck L4-4. Delivery truck for North England.",
+  "location": {
+    "position": {
+      "type": "Point",
+      "coordinates": [ 2.05, 57.1 ]
+    }
+  },
+  "properties": {
+    "status": "Idle",
+    "lastRepaired": "14. June 2014",
+    "currentLoadVolumeM3": "0",
+    "currentLoadWeightKg": "0",
+    "type": "40 Tons load"
+  },
+  "tags": [ "Truck", "Man TGS 3", "Scotland", "Diesel", "Large", "40 Tons" ]
+}

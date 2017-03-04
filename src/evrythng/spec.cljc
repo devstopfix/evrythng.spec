@@ -17,3 +17,21 @@
 (spec/def ::evrythng/createdAt ::evrythng/timestamp-type)
 (spec/def ::evrythng/timestamp ::evrythng/timestamp-type)
 (spec/def ::evrythng/updatedAt ::evrythng/timestamp-type)
+
+; Thngs
+
+(def thng-spec
+  "Specification of a Thng"
+  (spec/def ::evrythng/thng
+    (spec/keys :req [::evrythng/id
+                     ::evrythng/description
+                     ::evrythng/name]
+            :opt [::evrythng/createdAt
+                  ::evrythng/customFields
+                  ::evrythng/identifiers
+                  ::evrythng/product
+                  ::evrythng/properties
+                  ::evrythng/tags
+                  ::evrythng/timestamp
+                  ::evrythng/updatedAt
+                  ::evrythng/user])))
