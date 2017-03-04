@@ -22,6 +22,10 @@
 
 (spec/def ::evrythng/properties ::evrythng/properties-type)
 
+; Tags
+
+(spec/def ::evrythng/tags (spec/coll-of string?))
+
 ; Timestamps
 
 (spec/def ::evrythng/timestamp-type (spec/and integer? (spec/int-in 410227200000 4102444799000)))
