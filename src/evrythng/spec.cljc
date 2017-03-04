@@ -18,6 +18,20 @@
 (spec/def ::evrythng/timestamp ::evrythng/timestamp-type)
 (spec/def ::evrythng/updatedAt ::evrythng/timestamp-type)
 
+; Actions
+
+(def action-spec
+  "Specification of an Action"
+  (spec/def ::evrythng/action
+    (spec/keys :req [::evrythng/id]
+            :opt [::evrythng/collection
+                  ::evrythng/createdAt
+                  ::evrythng/customFields
+                  ::evrythng/product
+                  ::evrythng/tags
+                  ::evrythng/updatedAt]
+            )))
+
 ; Thngs
 
 (def thng-spec

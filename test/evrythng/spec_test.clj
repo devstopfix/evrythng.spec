@@ -17,6 +17,13 @@
       (json/read-str)
       (evt-namespace)))
 
+(deftest actions
+  (testing "Action Doc"
+    (let [action (fixture "action")]
+      (s/explain ::evrythng/action action)
+      (is (s/valid? ::evrythng/action action)
+          (s/explain-str ::evrythng/action action)))))
+
 (deftest thngs
   (testing "Thng Doc"
     (let [thng (fixture "thng")]
