@@ -5,10 +5,18 @@
 ; Identifiers use 24x48 characters. ~10^40 combinations
 
 (def ref-regex #"^[abcdefghkmnpqrstwxyABCDEFGHKMNPQRSTUVWXY23456789]{24}$")
-
 (spec/def ::evrythng/ref-type (spec/and string? #(re-matches ref-regex %)))
 
 (spec/def ::evrythng/id ::evrythng/ref-type)
+
+; Properties have their keys converted to lowercase
+
+(def snake-lower-case-regex #"^[a-z][a-z0-9_]*$")
+(spec/def ::evt/property-name-type
+  (spec/and string? #(re-matches snake-lower-case-regex %)))
+
+(s/def ::evrythng/properties
+  (s/map-of ::evrythng/property-name-type (s/or :b boolean? :i int? :f float? :s string?)))
 
 ; Timestamps
 
