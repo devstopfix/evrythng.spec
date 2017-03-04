@@ -9,14 +9,18 @@
 
 (spec/def ::evrythng/id ::evrythng/ref-type)
 
-; Properties have their keys converted to lowercase
+; Properties:
+;   keys are converted to lowercase on write
+;   values can be boolean, numbers and strings
 
 (def snake-lower-case-regex #"^[a-z][a-z0-9_]*$")
-(spec/def ::evt/property-name-type
+(spec/def ::evrythng/property-name-type
   (spec/and string? #(re-matches snake-lower-case-regex %)))
 
-(s/def ::evrythng/properties
-  (s/map-of ::evrythng/property-name-type (s/or :b boolean? :i int? :f float? :s string?)))
+(spec/def ::evrythng/properties-type
+  (spec/map-of ::evrythng/property-name-type (spec/or :b boolean? :i int? :f float? :s string?)))
+
+(spec/def ::evrythng/properties ::evrythng/properties-type)
 
 ; Timestamps
 
