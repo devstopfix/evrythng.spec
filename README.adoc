@@ -1,0 +1,18 @@
+evrythng.spec
+-------------
+
+Unofficial https://clojure.org/about/spec[specification] of the https://evrythng.com/[EVRYTHNG.com] REST API.
+
+# Specifications
+
+## Identifiers
+
+Thngs are identified by a globally unique 24 character number. The number is not https://en.wikipedia.org/wiki/Base64[Base64] encoded - only 48 characters are used and ambiguous characters are dropped. This gives 48^24^ combinations (22 https://en.wikipedia.org/wiki/Names_of_large_numbers[Duodecillion]) or approximately 10^40^ identifiers (see https://www.wolframalpha.com/input/?i=48%5E24+%3D+10%5Ex[WolframAlpha]).
+
+The identifiers tend to have +U+ as a prefix.
+
+# License
+
+Copyright © 2017 Devstopfix
+
+Distributed under the Apache License either version 2.0. Not officially supported by https://evrythng.com/[EVRYTHNG.com].

@@ -2,6 +2,8 @@
   (:require [clojure.spec :as spec]
             [evrythng :as evrythng]))
 
+; Identifiers use 24x48 characters. ~10^40 combinations
+
 (def ref-regex #"^[abcdefghkmnpqrstwxyABCDEFGHKMNPQRSTUVWXY23456789]{24}$")
 
 (spec/def ::evrythng/ref-type (spec/and string? #(re-matches ref-regex %)))
