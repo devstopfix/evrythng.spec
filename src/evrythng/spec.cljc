@@ -9,6 +9,12 @@
 
 (spec/def ::evrythng/id ::evrythng/ref-type)
 
+; Collections
+
+(spec/def ::evrythng/collection  ::evt/ref-type)
+(spec/def ::evrythng/collections (spec/coll-of ::evt/ref-type))
+
+
 ; Properties:
 ;   keys are converted to lowercase on write
 ;   values can be boolean, numbers and strings
@@ -56,7 +62,8 @@
     (spec/keys :req [::evrythng/id
                      ::evrythng/description
                      ::evrythng/name]
-            :opt [::evrythng/createdAt
+            :opt [::evrythng/collections
+                  ::evrythng/createdAt
                   ::evrythng/customFields
                   ::evrythng/identifiers
                   ::evrythng/product
