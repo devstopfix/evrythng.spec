@@ -1,0 +1,30 @@
+{
+  "name": "Evrythng London Office",
+  "position": {
+    "type": "Point",
+    "coordinates": [
+      51.6,
+      -0.1
+    ]
+  },
+  "address": {
+    "extension": "Unit 4, 122",
+    "street": "East Road",
+    "postalCode": "N1 6FB",
+    "city": "London",
+    "countryCode": "GB"
+  },
+  "description": "London HQ",
+  "icon": "https://evrythng.com/wp-content/themes/evrythng_v2.4/img/logo.svg",
+  "tags": [
+    "Office",
+    "London"
+  ],
+  "identifiers": {
+    "Place code": "KDL-46EX402AEP",
+    "Place number": "027242784925"
+  },
+  "customFields": {
+    "Internet": "Wi-Fi"
+  }
+}

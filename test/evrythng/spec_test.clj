@@ -1,9 +1,11 @@
 (ns evrythng.spec-test
   (:require [clojure.test :refer :all]
             [evrythng.spec]
+            [evrythng.spec.places]
             [evrythng.spec.user]
             [clojure.data.json :as json]
-            [clojure.spec :as s]))
+            [clojure.spec :as s]
+            [clojure.walk :refer [postwalk-replace]]))
 
 (defn namespace-keys [namespace m]
   "Change all of the keys of map m into keywords with given namespace.
@@ -31,6 +33,17 @@
       (s/explain ::evrythng/application-user user)
       (is (s/valid? ::evrythng/application-user user)
           (s/explain-str ::evrythng/application-user user)))))
+
+(deftest places
+  (testing "Place Doc"
+    (let [place (fixture "place")
+          place2 (postwalk-replace {"type" ::geojson/type
+                                    "coordinates" ::geojson/coordinates} place)]
+      (clojure.pprint/pprint place)
+      (clojure.pprint/pprint place2)
+      (s/explain ::evrythng/place place2)
+      (is (s/valid? ::evrythng/place place2)
+          (s/explain-str ::evrythng/place place2)))))
 
 (deftest projects
   (testing "Project Doc"

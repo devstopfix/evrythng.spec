@@ -1,6 +1,5 @@
 (ns evrythng.spec.user
   (:require [evrythng :as evrythng]
-            [clojure.spec :as spec]
             [clojure.spec :as spec]))
 
 ; Filterable
@@ -38,7 +37,7 @@
 ; TODO regex
 (spec/def ::evrythng/timezone string?)
 
-; Yser
+; User
 
 (spec/def ::evrythng/application-user
   (spec/keys :req [::evrythng/email
