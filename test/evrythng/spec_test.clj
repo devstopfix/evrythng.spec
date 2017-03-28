@@ -1,6 +1,7 @@
 (ns evrythng.spec-test
   (:require [clojure.test :refer :all]
             [evrythng.spec]
+            [evrythng.spec.user]
             [clojure.data.json :as json]
             [clojure.spec :as s]))
 
@@ -23,6 +24,13 @@
       (s/explain ::evrythng/action action)
       (is (s/valid? ::evrythng/action action)
           (s/explain-str ::evrythng/action action)))))
+
+(deftest application-users
+  (testing "Application User Doc"
+    (let [user (fixture "application_user")]
+      (s/explain ::evrythng/application-user user)
+      (is (s/valid? ::evrythng/application-user user)
+          (s/explain-str ::evrythng/application-user user)))))
 
 (deftest projects
   (testing "Project Doc"

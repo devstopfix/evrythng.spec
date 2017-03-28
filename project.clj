@@ -1,4 +1,4 @@
-(defproject evrythng.spec "0.17.63"
+(defproject evrythng.spec "0.17.80"
   :description "Unofficial specification of the EVRYTHNG.com REST API"
   :url "https://github.com/devstopfix/evrythng.spec"
   :license {:name "Apache License v2.0"

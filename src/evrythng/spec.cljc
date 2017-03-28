@@ -1,6 +1,5 @@
 (ns evrythng.spec "Spec for EVRYTHNG.com REST API"
-  (:require [clojure.spec :as spec]
-            [evrythng :as evrythng]
+  (:require [evrythng :as evrythng]
             [clojure.spec :as spec]))
 
 ; Identifiers use 24x48 characters. ~10^40 combinations
